@@ -33,8 +33,7 @@ trigger_run() {
 EOF
 }
 
-# if [ "${SCALR_TERRAFORM_OPERATION}" = "apply" ] && [ "${DOWNSTREAM_WORKSPACE_ID}" != "" ]; then
-if [ "${DOWNSTREAM_WORKSPACE_ID}" != "" ]; then
+if [ "${SCALR_TERRAFORM_OPERATION}" = "apply" ] && [ "${DOWNSTREAM_WORKSPACE_ID}" != "" ]; then
   if [ "${SCALR_TERRAFORM_EXIT_CODE}" = "0" ]; then
     echo "Terraform Apply was successful. Triggering downstream Run in ${DOWNSTREAM_WORKSPACE_ID}..."
     trigger_run
